@@ -3,9 +3,9 @@
 namespace Tests\FizzBuzzTest;
 
 use PHPUnit\Framework\TestCase;
-use App\ReverseString;
+use App\Palindromes;
 
-class ReverseStringTest extends TestCase
+class PalindromesTest extends TestCase
 {
     /**
      * @dataProvider provider
@@ -15,20 +15,18 @@ class ReverseStringTest extends TestCase
      */
     public function testNormalInputSet($input, $expectedResults)
     {
-        $reverseString = new ReverseString();
+        $reverseString = new Palindromes();
         $testResults = $reverseString->index($input);
-        $testResultsAlt = $reverseString->alternate($input);
 
         $this->assertEquals($expectedResults, $testResults);
-        $this->assertEquals($expectedResults, $testResultsAlt);
     }
 
     public function provider()
     {
         return array(
-            array("Hello", "olleH"),
-            array("Hello world!", "!dlrow olleH"),
-            array("Test case successful", "lufsseccus esac tseT"),
+            array("Hello", false),
+            array("abba", true),
+            array("001100", true),
         );
     }
 }

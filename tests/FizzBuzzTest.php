@@ -17,6 +17,7 @@ class FizzBuzzTest extends TestCase
     {
         $fizzBuzz = new FizzBuzz();
         $testResults = $fizzBuzz->index($input);
+
         $this->assertEquals($expectedResults, $testResults);
     }
 

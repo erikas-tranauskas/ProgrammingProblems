@@ -19,4 +19,9 @@ class ReverseString
 
         return $result;
     }
+
+    public function alternate($string)
+    {
+        return implode("", array_reverse(str_split($string)));
+    }
 }
