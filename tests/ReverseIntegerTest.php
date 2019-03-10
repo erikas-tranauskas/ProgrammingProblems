@@ -5,7 +5,7 @@ namespace Tests\FizzBuzzTest;
 use PHPUnit\Framework\TestCase;
 use App\ReverseCharacters;
 
-class ReverseStringTest extends TestCase
+class ReverseIntegerTest extends TestCase
 {
     /**
      * @dataProvider provider
@@ -15,20 +15,18 @@ class ReverseStringTest extends TestCase
      */
     public function testNormalInputSet($input, $expectedResults)
     {
-        $reverseString = new ReverseCharacters();
-        $testResults = $reverseString->index($input);
-        $testResultsAlt = $reverseString->alternate($input);
+        $reverseInt = new ReverseCharacters();
+        $testResults = $reverseInt->reverseInteger($input);
 
         $this->assertEquals($expectedResults, $testResults);
-        $this->assertEquals($expectedResults, $testResultsAlt);
     }
 
     public function provider()
     {
         return array(
-            array("Hello", "olleH"),
-            array("Hello world!", "!dlrow olleH"),
-            array("Test case successful", "lufsseccus esac tseT"),
+            array(15, 51),
+            array(-10, -1),
+            array(365, 563),
         );
     }
 }
