@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Compare two string if they are anagrams of each other.
+    Compare two strings if they are anagrams of each other.
     Anagram is string which can be made from symbols of another string using same characters in the same quantity.
     Do not take spaces and punctuation into consideration.
  */
