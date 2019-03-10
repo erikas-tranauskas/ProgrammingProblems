@@ -28,6 +28,21 @@ class Anagrams
         return true;
     }
 
+    public function alternate($string1, $string2)
+    {
+        $splitString1 = $this->splitString($string1);
+        $splitString2 = $this->splitString($string2);
+
+        ksort($splitString1);
+        ksort($splitString2);
+
+        if ($splitString1 === $splitString2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function splitString($string)
     {
         $characters = array();

@@ -18,8 +18,10 @@ class AnagramsTest extends TestCase
     {
         $anagrams = new Anagrams();
         $testResults = $anagrams->index($inputString1, $inputString2);
+        $testResultsAlt = $anagrams->alternate($inputString1, $inputString2);
 
         $this->assertEquals($expectedResults, $testResults);
+        $this->assertEquals($expectedResults, $testResultsAlt);
     }
 
     public function provider()
