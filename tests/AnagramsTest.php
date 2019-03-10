@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\FizzBuzzTest;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use App\Anagrams;
