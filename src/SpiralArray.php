@@ -3,9 +3,9 @@
 /*
     Return NxN spiral matrix by a given number.
     Example if the given number is 3:
-    1 2 3
-    8 9 4
-    7 6 5
+    [1 2 3
+     8 9 4
+     7 6 5]
  */
 
 namespace App;
