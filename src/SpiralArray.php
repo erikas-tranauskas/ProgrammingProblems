@@ -35,7 +35,7 @@ class SpiralArray
 
             $startRow++;
 
-            //Right column
+            // Right column
             for ($i = $startRow; $i <= $endRow; $i++) {
                 $results[$i][$endColumn] = $counter;
                 $counter++;
@@ -43,7 +43,7 @@ class SpiralArray
 
             $endColumn--;
 
-            //Bottom row
+            // Bottom row
             for ($i = $endColumn; $i >= $startColumn; $i--) {
                 $results[$endRow][$i] = $counter;
                 $counter++;
@@ -51,7 +51,7 @@ class SpiralArray
 
             $endRow--;
 
-            //Left column
+            // Left column
             for ($i = $endRow; $i >= $startRow; $i--) {
                 $results[$i][$startColumn] = $counter;
                 $counter++;
