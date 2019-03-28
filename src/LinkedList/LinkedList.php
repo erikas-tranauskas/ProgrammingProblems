@@ -65,4 +65,34 @@ class LinkedList
         }
     }
 
+    public function removeLast()
+    {
+        if ($this->head) {
+            if (!$this->head->next) {
+                $this->head = null;
+            }
+
+            $previous = $this->head;
+            $node = $this->head->next;
+
+            while ($node->next) {
+                $previous = $node;
+                $node = $node->next;
+            }
+
+            $previous->next = null;
+        }
+    }
+
+    public function insertLast($data)
+    {
+        $lastNode = $this->getLast();
+        $newNode = new Node($data);
+
+        if ($lastNode) {
+            $lastNode->next = $newNode;
+        } else {
+            $this->head = $newNode;
+        }
+    }
 }
