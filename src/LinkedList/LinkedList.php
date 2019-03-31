@@ -166,4 +166,41 @@ class LinkedList
 
         return true;
     }
+
+    /* Returns the midpoint of the list.
+       Get the first element of the list and iterate through the whole list
+       while incrementing $first by one element and $second by two elements
+       each iteration. If $second->next->next doesn't exist - it means we are at the end
+       of the list and midpoint is $first. */
+    public function midpoint($data)
+    {
+        $first = $data->getAt(0);
+        $second = $data->getAt(0);
+
+        while ($second->next && $second->next->next) {
+            $first = $first->next;
+            $second = $second->next->next;
+        }
+
+        return $first->data;
+    }
+
+    /* Get the n-th element of the list from the last node. */
+    public function fromLast($data, $index)
+    {
+        $first = $data->getAt(0);
+        $second = $data->getAt(0);
+
+        while ($index > 0) {
+            $second = $second->next;
+            $index--;
+        }
+
+        while ($second->next) {
+            $first = $first->next;
+            $second = $second->next;
+        }
+
+        return $first->data;
+    }
 }
