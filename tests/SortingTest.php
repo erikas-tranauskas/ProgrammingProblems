@@ -16,9 +16,11 @@ class SortingTest extends TestCase
     public function testNormalInputSet($input, $expectedResults)
     {
         $sorting = new Sorting();
-        $testResults = $sorting->bubbleSort($input);
+        $testResultsBubble = $sorting->bubbleSort($input);
+        $testResultsSelection = $sorting->selectionSort($input);
 
-        $this->assertEquals($expectedResults, $testResults);
+        $this->assertEquals($expectedResults, $testResultsBubble);
+        $this->assertEquals($expectedResults, $testResultsSelection);
     }
 
     public function provider()

@@ -22,4 +22,24 @@ class Sorting
 
         return $array;
     }
+
+    public function selectionSort($array)
+    {
+        for ($i = 0; $i < count($array); $i++) {
+            $indexMin = $i;
+            for ($j = $i + 1; $j < count($array); $j++) {
+                if ($array[$j] < $array[$indexMin]) {
+                    $indexMin = $j;
+                }
+            }
+
+            if ($indexMin !== $i) {
+                $lesser = $array[$indexMin];
+                $array[$indexMin] = $array[$i];
+                $array[$i] = $lesser;
+            }
+        }
+
+        return $array;
+    }
 }
